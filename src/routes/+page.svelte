@@ -18,6 +18,7 @@
 		{ key: "Content-Type", value: "application/json" },
 	]);
 	let prompt = $state("There is a dead mouse near me...");
+	let expressionModel = $state("gpt-4o-mini");
 	let body = $derived({
 		prompt,
 		chat_history: JSON.stringify([
@@ -31,6 +32,7 @@
 		use_expression: "true",
 		activity: "icebreaker",
 		activity_count: 3,
+		expression_model: expressionModel,
 	});
 	let bodyStr = $derived(JSON.stringify(body, null, "\t"));
 
@@ -263,6 +265,18 @@
 			{/if}
 
 			<div class="mt-6 flex items-end gap-4">
+				<fieldset class="fieldset">
+					<legend class="fieldset-legend font-normal"
+						>Expression Model</legend
+					>
+					<input
+						type="text"
+						class="input"
+						placeholder="Value"
+						bind:value={expressionModel}
+					/>
+				</fieldset>
+
 				<fieldset class="fieldset">
 					<legend class="fieldset-legend">Run how many times?</legend>
 					<select class="select max-w-[200px]" bind:value={runner}>
