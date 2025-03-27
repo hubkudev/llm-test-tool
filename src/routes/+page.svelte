@@ -4,7 +4,7 @@
 	import Papa from "papaparse";
 
 	// State variables
-	let url = $state("https://a7dc-111-94-113-192.ngrok-free.app");
+	let url = $state("https://83eb-180-247-61-4.ngrok-free.app");
 	let path = $state(
 		"/api/chat?passphrase=eJMZBmAL6bNZtMLWHpiQwAksDvIfEaaqt5QZ&config_id=1&app_id=3",
 	);
